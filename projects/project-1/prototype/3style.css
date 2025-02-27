@@ -1,0 +1,327 @@
+/* Layer 3 */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.active-page {
+    color: red ;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: fixed; /* Keeps it at the top */
+    top: 0; /* Aligns it to the top of the page */
+    left: 0;
+    width: 100%; /* Stretches across the screen */
+    background: black; /* Keeps the background solid */
+    z-index: 1000; /* Ensures it stays above other content */
+    padding: 20px 0;
+}
+
+nav {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+/* Full-Screen Quote Section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 0 10%;
+}
+
+.quote {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollable Content */
+.content {
+    padding: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Full-Screen Quote Section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 0 10%;
+    position: relative;
+    color: red;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Fading Effect */
+.fading {
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.5s ease-out;
+}
+
+/* Screenplay */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+.screenplay {
+    font-family: 'Cutive Mono', monospace;
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: left;
+    line-height: 1.7;
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 8px;
+}
+
+/* Scene Headings */
+.scene-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
+    margin-top: 40px;
+}
+
+/* Character Names */
+.character {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Dialogue */
+.dialogue {
+    font-size: 1rem;
+    margin-left: 40px;
+    text-indent: -20px;
+}
+
+/* Action Lines */
+.action {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Parentheticals */
+.parenthetical {
+    font-style: italic;
+    color: gray;
+    font-size: 1rem;
+}
+
+/* Transitions */
+.transition {
+    text-align: right;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* Continued Tag */
+.continued {
+    text-align: right;
+    font-style: italic;
+    color: gray;
+}
+
+/* Emphasized Text */
+.emphasized {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Individual Letter Hover Effect - Scatter */
+.scatter {
+    display: inline-block;
+    transition: transform 0.6s ease-out, opacity 0.5s ease-out;
+    cursor: pointer;
+}
+
+/* When Hovering Over Each Letter */
+.scatter:hover {
+    transform: translate(
+        calc(-50px + 100px * var(--randX)), 
+        calc(-50px + 100px * var(--randY))
+    ) rotate(calc(-30deg + 60deg * var(--randR)));
+    opacity: 0;
+}
+
+/* Snowfall Effect */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2; /* Puts snowfall in the background */
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1rem;
+    opacity: 0.8;
+    user-select: none;
+    animation: snowfall linear infinite;
+}
+
+/* Keyframes for Snow Falling */
+@keyframes snowfall {
+    from {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+/* Navigation Buttons - Styled Like Nav Bar */
+.navigation-buttons {
+    position: fixed;
+    bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+/* Styling for Prev and Next Buttons */
+.prev-button,
+.next-button {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: transparent; 
+    padding: 10px 15px;
+    border: 2px solid transparent; 
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect (Same as Nav Bar) */
+.prev-button:hover,
+.next-button:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+
+/* Apply the effect to each letter inside .wind-text */
+.wind-text span {
+    display: inline-block;
+    animation: wind-blow 4s infinite alternate ease-in-out;
+}
+
+/* Wind-blown effect: Makes each letter tilt and shake */
+@keyframes wind-blow {
+    0% { transform: rotate(0deg) translateX(0px) translateY(0px); }
+    25% { transform: rotate(-3deg) translateX(-1px) translateY(-1px); }
+    50% { transform: rotate(2deg) translateX(2px) translateY(0px); }
+    75% { transform: rotate(-2deg) translateX(-2px) translateY(1px); }
+    100% { transform: rotate(3deg) translateX(1px) translateY(-1px); }
+}
+
+
+/* Wind-blown effect: Makes each letter tilt and shake */
+@keyframes wind-blow {
+    0% { transform: rotate(0deg) translateX(0px) translateY(0px); }
+    25% { transform: rotate(-3deg) translateX(-2px) translateY(-1px); }
+    50% { transform: rotate(4deg) translateX(3px) translateY(0px); }
+    75% { transform: rotate(-2deg) translateX(-4px) translateY(1px); }
+    100% { transform: rotate(3deg) translateX(2px) translateY(-1px); }
+}
+
+/* Apply the effect to each letter inside .screenplay */
+.screenplay span {
+    display: inline-block;
+    animation: wind-blow 2s infinite alternate ease-in-out;
+}
+
+/* Wind-blown effect: Makes each letter tilt, shake, and shift */
+@keyframes wind-blow {
+    0% { transform: rotate(0deg) translateX(0px) translateY(0px); }
+    20% { transform: rotate(-4deg) translateX(-3px) translateY(-2px); }
+    40% { transform: rotate(6deg) translateX(4px) translateY(1px); }
+    60% { transform: rotate(-5deg) translateX(-5px) translateY(0px); }
+    80% { transform: rotate(3deg) translateX(3px) translateY(-1px); }
+    100% { transform: rotate(-2deg) translateX(-2px) translateY(1px); }
+}
+
+/* Apply the effect to each letter inside .screenplay */
+.screenplay span {
+    display: inline-block;
+    animation: wind-blow 3s infinite alternate ease-in-out;
+}
+
+.screenplay p {
+    text-align: left; /* Ensures all text aligns to the left */
+    margin-left: 0; /* Resets any unwanted indentation */
+    text-indent: 0; /* Removes unintended text indentation */
+    line-height: 1.7; /* Ensures consistent line spacing */
+}
+
+.character {
+    display: block; /* Ensures the text takes full width */
+    width: 100%; /* Makes sure the text spans full width */
+    text-align: center !important; /* Forces text alignment */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px 0; /* Ensures consistent spacing */
+}

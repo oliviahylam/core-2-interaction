@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden; 
+}
+   
+    .active-page {
+        color: red ;
+    }
+    
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: fixed; /* Keeps it at the top */
+    top: 0; /* Aligns it to the top of the page */
+    left: 0;
+    width: 100%; /* Stretches across the screen */
+    background: black; /* Keeps the background solid */
+    z-index: 1000; /* Ensures it stays above other content */
+    padding: 20px 0;
+}
+
+/* Full-Screen Quote Section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 0 10%;
+}
+
+.quote {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollable Content */
+.content {
+    padding: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Full-Screen Quote Section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 0 10%;
+    position: relative;
+    color: red;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Fading Effect */
+.fading {
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.5s ease-out;
+}
+
+nav {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+
+
+/* Screenplay */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+.screenplay {
+    font-family: 'Cutive Mono', monospace;
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: left;
+    line-height: 1.7;
+    background: rgba(0, 0, 0, 0.7); /* Subtle background for contrast */
+    border-radius: 8px;
+}
+
+.level-title {
+    padding-top: 100px; /* Adjust as needed */
+}
+
+
+.limbo-container {
+    margin-top: 500px; /* Adjust value as needed */
+}
+
+
+/* Scene Headings */
+.scene-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
+    margin-top: 40px;
+    
+}
+
+/* Character Names */
+.character {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Dialogue */
+.dialogue {
+    font-size: 1rem;
+    margin-left: 40px;
+    text-indent: -20px;
+}
+
+/* Action Lines */
+.action {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Parentheticals */
+.parenthetical {
+    font-style: italic;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+/* Transitions */
+.transition {
+    text-align: right;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* Continued Tag */
+.continued {
+    text-align: right;
+    font-style: italic;
+    color: gray;
+}
+
+/* Emphasized Text */
+.emphasized {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.screenplay p {
+    text-align: left; /* Ensures all text aligns to the left */
+    margin-left: 0; /* Resets any unwanted indentation */
+    text-indent: 0; /* Removes unintended text indentation */
+    line-height: 1.7; /* Ensures consistent line spacing */
+}
+
+.character {
+    display: block; /* Ensures the text takes full width */
+    width: 100%; /* Makes sure the text spans full width */
+    text-align: center !important; /* Forces text alignment */
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px 0; /* Ensures consistent spacing */
+}
+
+/* Navigation Buttons - Opposite Corners */
+.navigation-buttons {
+    position: fixed;
+    bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Navigation Buttons - Fixed at Bottom Corners */
+.navigation-buttons {
+    position: fixed;
+    bottom: 20px; /* Keeps buttons at the bottom of the viewport */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensures they stay above other elements */
+}
+
+/* Prev Button (Bottom Left) */
+.prev-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+/* Next Button (Bottom Right) */
+.next-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect - Matches Layer 3 */
+.prev-button:hover,
+.next-button:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}

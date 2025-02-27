@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbo - Inception</title>
+    <link rel="stylesheet" href="limbo.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="level1.html">Layer 1</a></li>
+                <li><a href="level2.html">Layer 2</a></li>
+                <li><a href="level3.html">Layer 3</a></li>
+                <li><a href="limbo.html" class="active-page">Limbo</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <section class="quote-section fading" id="quote">
+        <h1 class="quote">"You're waiting for a train, a train that will take you far away.You know where you hope this train will take you, but you don't know for sure."</h1>
+        <h1 class="quote">"They come to be woken up. The dream has become their reality."</h1>
+    </section>
+
+    <main class="level-container">
+        <h1 class="level-title">Limbo: The Forgotten City</h1>
+
+        <section class="screenplay">
+            <h1 class="frosted-text">Cobb and Ariadne navigate the vast, decaying city of Limbo—a space constructed from Cobb’s memories, where time stretches infinitely, and reality becomes indistinguishable from dreams. As they search for Fischer, they must escape before they lose themselves in the subconscious forever.
+            </h1>
+            <p class="scene-heading">EXT. LIMBO – CONTINUOUS</p>
+            <p class="action">Cobb and Ariadne, moving . They step into the of the tall, crumbling buildings.</p>
+            <p class="action">The streets are eerily deserted.</p>
+            <p class="action">As they move further in, the buildings transform—they become newer, different.</p>
+            <p class="action">Ariadne marvels at the extraordinary collection of buildings—every architectural style imaginable, rising in waves of failed utopias.</p>
+
+            <p class="character">ARIADNE</p>
+            <p class="dialogue">You built all this?</p>
+
+            <p class="character">COBB</p>
+            <p class="dialogue">We both did.</p>
+
+            <p class="character">ARIADNE</p>
+            <p class="dialogue">It's incredible.</p>
+
+            <p class="character">COBB</p>
+            <p class="dialogue">We built for years. Then, when that got stale, we started in on the memories…</p>
+
+            <p class="continued">(CONTINUED)</p>
+
+            <p class="action">A child's shout echoes through the deserted canyons.</p>
+            <p class="action">Cobb turns, looking down a side street.</p>
+            <p class="action">A little blonde boy crouches, his back to us.</p>
+            <p class="action">A little blonde girl joins him.</p>
+            <p class="action">As Cobb steps forward, they run off.</p>
+        </section>
+    </main>
+
+    <script>
+        // scatter
+        document.addEventListener("DOMContentLoaded", function() {
+            const screenplayText = document.querySelectorAll(".screenplay p");
+            
+            screenplayText.forEach(paragraph => {
+                let text = paragraph.innerHTML;
+                let newHTML = "";
+
+                for (let char of text) {
+                    if (char !== " ") {
+                        newHTML += `<span class="scatter">${char}</span>`;
+                    } else {
+                        newHTML += " ";
+                    }
+                }
+
+                paragraph.innerHTML = newHTML;
+            });
+
+        
+            document.querySelectorAll('.scatter').forEach(letter => {
+                letter.addEventListener('mouseover', function() {
+                    this.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`;
+                    this.style.opacity = "0";
+                    this.style.transition = "transform 0.6s ease-out, opacity 0.5s ease-out";
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Fading effect on scroll
+        window.addEventListener("scroll", function() {
+            let quoteSection = document.getElementById("quote");
+            let scrollPosition = window.scrollY;
+            let fadeStart = 50;  // Start fading at 50px scroll
+            let fadeEnd = 300;   // Fully faded at 300px scroll
+
+            if (scrollPosition > fadeStart) {
+                let opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                quoteSection.style.opacity = Math.max(opacity, 0); 
+            } else {
+                quoteSection.style.opacity = 1;
+            }
+        });
+    </script>
+
+<div class="navigation-buttons"></div>
+    <a href="level3.html" class="prev-button">← Prev</a>
+    <a href="about.html" class="next-button">Next →</a>
+</div>
+
+</body>
+</html>

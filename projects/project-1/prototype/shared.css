@@ -1,0 +1,60 @@
+/* Styling for Prev and Next Buttons */
+.prev-button,
+.next-button {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: transparent; 
+    padding: 10px 15px;
+    border: 2px solid transparent; 
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect (Same as Nav Bar) */
+.prev-button:hover,
+.next-button:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+
+/* Navigation Buttons - Styled Like Nav Bar */
+.navigation-buttons {
+    position: fixed;
+    bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+/* Responsive base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  /* Container that adapts to screen size */
+  .container {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Ensure images and videos scale properly */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  

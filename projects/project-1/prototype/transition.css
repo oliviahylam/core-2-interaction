@@ -1,0 +1,50 @@
+body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.eye-container {
+    display: flex;
+    gap: 50px;
+}
+
+/* Eye Shape */
+.eye {
+    width: 120px;
+    height: 60px;
+    position: relative;
+}
+
+/* White part of the eye */
+.eye-white {
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+}
+
+/* Pupil */
+.pupil {
+    fill: black;
+}
+
+/* Eyelid*/
+.eyelid {
+    fill: black;
+    position: absolute;
+    animation: blink 4s ease-in-out;
+}
+
+@keyframes blink {
+    0%, 85% {
+        transform: translateY(-50px); /* Eyes Open */
+    }
+    88% {
+        transform: translateY(0); /* Eyes Closed */
+    }
+
+
+}

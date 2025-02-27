@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1000;
+}
+
+nav {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .active-page {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+/* Main About Container */
+.about-container {
+    max-width: 900px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Title */
+.about-title {
+    text-align: center;
+    font-size: 3rem;
+    color: white; /* Red heading */
+    margin-bottom: 30px;
+}
+
+/* Section Styling */
+.about-section {
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    color: red; /* Red subheadings */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.about-section p, .about-section ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+}
+
+.about-section ul {
+    padding-left: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 10px;
+    }
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+    .about-section p, .about-section ul {
+        font-size: 1rem;
+    }
+}
+
+.hover-item {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hover-item:hover {
+    color: red; /* Text turns red on hover */
+}
+
+.hidden-text {
+    display: none;
+    font-size: 1rem;
+    color: white;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hover-item:hover .hidden-text {
+    display: inline; /* Reveals the hidden text */
+    opacity: 1;
+}

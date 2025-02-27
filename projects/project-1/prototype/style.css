@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: center;x
+    padding: 20px 30px;
+}
+
+nav {
+    width: 80%;
+    max-width: 1000px; 
+    display: flex;
+    justify-content: space-between; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    margin: 20;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: red;
+    border-bottom: 2px solid darkslategrey;
+}
+
+/* Centering the Title */
+main {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 100px;
+
+}
+
+
+
+.title-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align */
+    text-align: center; /* Ensure text stays centered */
+}
+
+.subtitle {
+    margin-top: 0px; /* Controls spacing */
+    font-size: 50px; /* Adjust size */
+    color: dar(255, 255, 255, 0.8); /* Softer text color */
+}
+
+
+
+/* Click to Enter Button */
+.enter-btn {
+    margin-top:100px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enter-btn:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+
+
+@keyframes tv-static {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+body {
+    background: url('https://content.propstore.com/auction/emlauk22/gifs/144143.gif') no-repeat center center fixed;
+    background-size: cover; 
+}
+
+/* Scroll to Enter Text */
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-trigger {
+    height: 150vh; /* Makes the page longer so scrolling is possible */
+    background: transparent;
+}
+
+/* Fade effect on scroll */
+.scroll-indicator.fade {
+    opacity: 0;
+}
+
+
+/* Blinking Overlay - Simulates Eyes Slowly Closing */
+.blinking-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9999; /* Ensures it's above everything */
+}
+
+.blink-top,
+.blink-bottom {
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    background: black;
+    transition: transform 2s ease-in-out; /* Smooth transition effect */
+}
+
+/* Start Position */
+.blink-top {
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.blink-bottom {
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+/* Active State - When scrolling triggers it */
+.blink-active .blink-top {
+    transform: translateY(0);
+}
+
+.blink-active .blink-bottom {
+    transform: translateY(0);
+}

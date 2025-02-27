@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="level1.html">Layer 1</a></li>
+                <li><a href="level2.html">Layer 2</a></li>
+                <li><a href="level3.html">Layer 3</a></li>
+                <li><a href="limbo.html">Limbo</a></li>
+                <li><a href="about.html" class="active-page">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <main class="about-container">
+        <h1 class="about-title"></h1>
+
+        <section class="about-section">
+            <h2>Concept & Inspiration</h2>
+            <p>This interactive website is a creative adaptation of <em>Inception</em> (2010), directed by <strong>Christopher Nolan</strong>. It explores the film’s dreamscapes through a unique digital experience, allowing users to navigate different layers of the dream world using interactive design, typography, and animation.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Design & Development</h2>
+            <p>The website was built using <strong>HTML, CSS, and JavaScript</strong>, incorporating various effects such as <strong>animated typography, snowfall simulation, scrolling transitions, and interactive elements</strong> to enhance the surreal nature of the dreamworld.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Features & Techniques</h2>
+            <ul>
+                <li><strong>Layered Navigation:</strong> A seamless scrolling experience that mirrors the multi-layered dream concept.</li>
+                <li><strong>Typography & Motion Graphics:</strong> Inspired by cinematic storytelling and the film’s visual language.</li>
+                <li><strong>Interactive Effects:</strong> Snowfall, mirroring text, and a blinking transition to simulate dream entry.</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Sources & Credits</h2>
+            <div class="hover-reveal">
+                <p class="hover-item">🎥 <strong>Film Source:</strong> <span class="hidden-text"> Inception (2010), directed by Christopher Nolan</span></p>
+                <p class="hover-item">🔠 <strong>Typography References:</strong> <span class="hidden-text"> Inspired by futuristic and cinematic fonts</span></p>
+                <p class="hover-item">💻 <strong>Code References:</strong> <span class="hidden-text"> MDN Web Docs, CSS Tricks, W3Schools</span></p>
+                <p class="hover-item">🎨 <strong>Design Inspiration:</strong> <span class="hidden-text">Movie posters, cyberpunk aesthetics</span></p>
+            </div>
+        </section>
+        
+
+        <section class="about-section">
+            <h2>Creator’s Note</h2>
+            <p>This project is an <strong>experimental exploration of storytelling through web design</strong>. It blends <strong>cinematic themes with interactive experiences</strong>, offering a new way to engage with film narratives in a digital format.</p>
+            <p>Thank you for joining the journey.</p>
+        </section>
+
+        
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let title = "About This Project";
+            let index = 0;
+            let speed = 100; // Typing speed in milliseconds
+            function typeWriter() {
+                if (index < title.length) {
+                    document.querySelector(".about-title").textContent += title.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            typeWriter();
+        });
+    </script>
+    
+
+</body>
+</html>

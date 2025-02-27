@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Scene - Inception</title>
+    <link rel="stylesheet" href="van.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="level1.html">Level 1</a></li>
+                <li><a href="van.html" class="active-page">Layer 2 - Van Scene</a></li>
+                <li><a href="level2.html">Layer 3 - Hotel</a></li>
+                <li><a href="level3.html">Layer 4 - Snow Fortress</a></li>
+                <li><a href="limbo.html">Limbo</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="quote-section fading" id="quote">
+        <h1 class="quote">"Once an idea has taken hold of the brain, it's almost impossible to eradicate."</h1>
+        <h1 class="quote">"Don't you want to take a leap of faith? Or become an old man, filled with regret, waiting to die alone!"</h1>
+    </section>
+
+    <section class="content">
+        <h2>Welcome to Layer 2 - The Van Scene</h2>
+        <p>The dream goes deeper...</p>
+        <p>Scroll down to explore.</p>
+    </section>
+
+    <!-- Flickering Light Effect -->
+    <div class="flicker-effect"></div>
+
+    <!-- Moving Shadows Effect -->
+    <div class="shadow-effect"></div>
+
+    <section class="screenplay">
+        <p class="scene-heading">INT. SEDAN – DAY</p>
+        <p class="transition">CUT TO:</p>
+        <p class="action">Cobb DRIVES. Saito and Arthur are in the back. Rain BEATS down. Cobb pulls over.</p>
+
+        <p class="scene-heading">EXT. NEW YORK STREETS – CONTINUOUS</p>
+        <p class="action">Yusuf stands on the corner, silver briefcase in hand, collar turned up against the rain. He reaches for the door.</p>
+
+        <p class="scene-heading">INT. SEDAN – CONTINUOUS</p>
+        <p class="action">Yusuf clambers into the back, brushing rain from his face.</p>
+
+        <p class="character">ARTHUR</p>
+        <p class="dialogue"><span class="parenthetical">(indicates rain)</span> Couldn't you have peed before you went under?</p>
+
+        <p class="character">YUSUF</p>
+        <p class="dialogue">Sorry.</p>
+
+        <p class="action">The front door OPENS and Eames climbs in, soaked.</p>
+
+        <p class="character">EAMES</p>
+        <p class="dialogue">Bit too much free champagne before takeoff, Yusuf?</p>
+
+        <p class="character">YUSUF</p>
+        <p class="dialogue">Ha bloody ha.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">At least we know he'll be looking for a cab in this.</p>
+
+        <p class="scene-heading">INT./EXT. SEDAN ON RAINY NEW YORK STREETS – CONTINUOUS</p>
+        <p class="action">Cobb pulls out into the heavy traffic. He weaves around several cars before lining up behind a YELLOW CAB.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">Brace yourselves.</p>
+
+        <p class="action">Cobb hits the gas—REAR ENDS the cab with a CRUNCH. The CAB DRIVER gets out, fuming.</p>
+
+        <p class="character">CAB DRIVER</p>
+        <p class="dialogue">Hey, asshole! Why don't you try driving without your thumb up—</p>
+
+        <p class="action">He sees the SILENCED PISTOL Cobb is holding at his belly.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">Walk away.</p>
+
+        <p class="action">The Cab Driver backs off. Arthur climbs into the cab. Both cars pull away.</p>
+
+        <p class="continued">(CONTINUED)</p>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let quoteSection = document.getElementById("quote");
+            let scrollPosition = window.scrollY;
+            let fadeStart = 50;  
+            let fadeEnd = 300;   
+
+            if (scrollPosition > fadeStart) {
+                let opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                quoteSection.style.opacity = Math.max(opacity, 0); 
+            } else {
+                quoteSection.style.opacity = 1;
+            }
+        });
+    </script>
+
+    <div class="navigation-buttons">
+        <a href="level1.html" class="prev-button">← Prev</a>
+        <a href="level2.html" class="next-button">Next →</a>
+    </div>
+
+</body>
+</html>

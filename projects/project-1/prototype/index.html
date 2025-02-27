@@ -1,0 +1,87 @@
+
+<html lang="en">
+<head> 
+    <title>Inception Interactive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+    <!-- Blinking Transition -->
+<div class="blinking-overlay">
+    <div class="blink-top"></div>
+    <div class="blink-bottom"></div>
+</div>
+
+    <header>
+        <nav>
+            <ul>
+    
+            <li><a href="level1.html">Layer 1</a></li>
+            <li><a href="level2.html">Layer 2</a></li>
+            <li><a href="level3.html">Layer 3</a></li>
+            <li><a href="limbo.html">Limbo</a></li>
+            <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="title">INCEPTION</h1>
+        <p class="subtitle">An immersive screenplay</p>
+        <p class="scroll-indicator">Scroll to Sleep</p>
+    </main>
+
+    <div class="transition-section">
+        <a href="transition.html" class="hidden-link"></a>
+    </div>
+
+     <!-- Hidden Scroll Section (Fix) -->
+     <div class="scroll-trigger"></div>
+
+
+
+     <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const blinkingOverlay = document.querySelector(".blinking-overlay");
+
+    // Check if the user is coming back to the home page
+    if (sessionStorage.getItem("blinked") === "true") {
+        sessionStorage.removeItem("blinked"); // Reset the flag when back on home page
+    }
+
+    // Detect scrolling on the home page
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 100 && !sessionStorage.getItem("blinked")) { 
+            sessionStorage.setItem("blinked", "true"); // Set flag to prevent repetition
+
+            // Start blinking animation
+            blinkingOverlay.classList.add("blink-active");
+
+            setTimeout(() => {
+                window.location.href = "level1.html"; // Redirect while screen is black
+            }, 3000); 
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.includes("level1.html")) {
+        const blinkingOverlay = document.querySelector(".blinking-overlay");
+
+        // Keep the screen black initially
+        blinkingOverlay.classList.add("blink-active");
+
+        // Wait 2 seconds, then open the eyes after redirecting
+        setTimeout(() => {
+            blinkingOverlay.classList.remove("blink-active");
+        }, 2000);
+    }
+});
+
+    </script>
+    
+
+
+</body>
+</html>

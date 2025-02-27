@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1 - Inception</title>
+    <link rel="stylesheet" href="2style.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="level1.html">Layer 1</a></li>
+                <li><a href="level2.html"class="active-page">Layer 2</a></li>
+                <li><a href="level3.html">Layer 3</a></li>
+                <li><a href="limbo.html">Limbo</a></li>
+                <li><a href="about.html">About</a></li>
+                
+
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section class="quote-section fading" id="quote">
+        <h1 class="quote">"If you can steal an idea, why can't you plant one there instead?"</h1>
+        <h1 class="quote">"The dreamer can always remember the genesis of the idea. True inspiration is impossible to fake."</h1>
+    </section>
+
+    <section class="content">
+        <h2>Welcome to Layer 2</h2>
+        <p>Time slows, gravity shifts, and the dream becomes unstable</p>
+        <p>In the hotel, deception is key—Fischer must believe he’s in control.</p>
+        <p>Scroll down to explore</p>
+    </section>
+
+
+    <!-- Flickering Light Effect -->
+<div class="flicker-effect"></div>
+
+<!-- Moving Shadows Effect -->
+<div class="shadow-effect"></div>
+
+
+    <section class="screenplay">
+        <h1 class="frosted-text">In a hotel within Fischer’s subconscious, Arthur and the team work to manipulate him while dealing with zero gravity caused by the falling van in the previous layer. Arthur prepares the next "kick" as time runs out. </h1>
+
+       
+        <div class="spinning-hotel">HOTEL</div>
+
+        <p class="scene-heading">INT. ROOM 491 – CONTINUOUS</p>
+        
+        <p class="action">
+            Arthur leads Ariadne inside. He walks to the closet, opens the room safe, and pulls out four bricks of plastic explosive.
+        </p>
+
+        <p class="character">ARTHUR</p>
+        <p class="dialogue">
+            So, if everything's correct, this room should be directly below…
+        </p>
+
+        <p class="scene-heading">INT. LOBBY BATHROOM, HOTEL – CONTINUOUS
+        </p>
+
+        <p class="action">
+            Cobb looks reassuringly at Fischer.
+        </p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">What do you remember from before this dream?</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue"><span class="parenthetical">(thinking)</span> Rain... gunfire... Uncle Peter.</p>
+        <p class="dialogue"><span class="parenthetical">(looks up)</span> Christ—we've been kidnapped.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">Where were they holding you?</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue">They had us... in the back of a van...</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">Your body's bouncing around in the back of a van right now—that explains the gravity shifts.</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue">It was... to do with a safe... Christ, why's it so hard to remember?</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">It's like trying to remember a dream after you've woken up. It takes years of practice to do it easily.</p>
+        <p class="dialogue">So, you and Browning have been pulled into this dream so they can steal something from your mind. What?</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue">They wanted a combination to a safe... they demanded the first numbers to pop into my head.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">That's them extracting a locator.</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue">A locator?</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue">A number from your own subconscious. It can be used any number of ways...</p>
+        <p class="dialogue"><span class="parenthetical">(thinking)</span> This is a hotel. Room numbers. What was the number you gave them?</p>
+
+        <p class="character">FISCHER</p>
+        <p class="dialogue">5,2... something... it was a long number. 528... 528, 4 something.</p>
+
+        <p class="character">COBB</p>
+        <p class="dialogue"><span class="parenthetical">(opens phone)</span> Well, we know where to start.</p>
+        <p class="dialogue"><span class="parenthetical">(into phone)</span> Fifth floor.</p>
+
+        <p class="continued">(CONTINUED)</p>
+
+        <p class="scene-heading">INT. ROOM 491 – CONTINUOUS</p>
+        <p class="action">Arthur hangs up the phone. He is standing on a chair, attaching the explosives to the ceiling.</p>
+
+        <p class="character">ARIADNE</p>
+        <p class="dialogue">Do you use a timer?</p>
+
+        <p class="character">ARTHUR</p>
+        <p class="dialogue">No, I have to judge it myself.</p>
+        <p class="dialogue">Once you're all asleep up in room 528, I wait till Yusuf starts his kick...</p>
+
+        <p class="character">ARIADNE</p>
+        <p class="dialogue">How will you know?</p>
+
+        <p class="character">ARTHUR</p>
+        <p class="dialogue">His music warns me it's coming, then the van hitting the barrier of the bridge should be unmistakable—</p>
+        <p class="dialogue">that's when I blow the floor out from underneath us and we get a nice synchronized kick.</p>
+
+        <p class="dialogue">Too soon, and we won't get pulled out, too late and I won't be able to drop us.</p>
+
+        <p class="character">ARIADNE</p>
+        <p class="dialogue">Why not?</p>
+
+        <p class="character">ARTHUR</p>
+        <p class="dialogue">The van will be in free fall. I can't drop us with no gravity.</p>
+
+        <p class="action">Arthur finishes setting the charges.</p>
+    </section>
+
+
+   
+   <script>
+        window.addEventListener("scroll", function() {
+            let quoteSection = document.getElementById("quote");
+            let scrollPosition = window.scrollY;
+            let fadeStart = 50;  // Start fading at 50px scroll
+            let fadeEnd = 300;   // Fully faded at 300px scroll
+
+            if (scrollPosition > fadeStart) {
+                let opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                quoteSection.style.opacity = Math.max(opacity, 0); 
+            } else {
+                quoteSection.style.opacity = 1;
+            }
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const shadowContainer = document.querySelector(".shadow-effect");
+
+        function createShadow() {
+            const shadow = document.createElement("div");
+            shadow.classList.add("shadow");
+
+            // Random positioning
+            shadow.style.left = Math.random() * 100 + "vw";
+            shadow.style.top = Math.random() * 100 + "vh";
+            shadow.style.animationDuration = Math.random() * 6 + 4 + "s"; // Random speed
+
+            shadowContainer.appendChild(shadow);
+
+            // Remove shadow after animation
+            setTimeout(() => {
+                shadow.remove();
+            }, 7000);
+        }
+
+        setInterval(createShadow, 2500); // Generates a new shadow every 2.5 seconds
+    });
+</script>
+
+<div class="navigation-buttons">
+    <a href="level1.html" class="prev-button">← Prev</a>
+    <a href="level3.html" class="next-button">Next →</a>
+</div>
+
+
+</body>
+</html>
