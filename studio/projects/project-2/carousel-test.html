@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carousel Test</title>
+  <style>
+    /* Container for the carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 40px auto; /* Center the carousel, with some vertical spacing */
+      border: 1px solid #ccc;
+    }
+
+    /* Track containing all the boxes */
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease;
+      /* Optional: For debugging, add background-color */
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    /* Each carousel box */
+    .carousel-box {
+      flex: 0 0 calc(33.33% - 20px); /* 3 boxes visible at a time with a gap of 20px */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* Arrow buttons for the carousel */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .carousel-prev {
+      left: 10px;
+    }
+    .carousel-next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Carousel Section -->
+  <section id="carousel-section">
+    <h2 style="text-align:center; font-family: 'Playfair Display', serif; color: #2a822d;">Explore More</h2>
+    <div class="carousel-container">
+      <button class="carousel-arrow carousel-prev">&#8592;</button>
+      <div class="carousel-track">
+        <!-- 15 Boxes; update the background-image URLs as needed -->
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+1');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+2');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+3');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+4');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+5');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+6');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+7');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+8');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+9');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+10');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+11');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+12');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+13');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+14');"></a>
+        <a href="#" class="carousel-box" style="background-image: url('https://via.placeholder.com/300x200?text=Image+15');"></a>
+      </div>
+      <button class="carousel-arrow carousel-next">&#8594;</button>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      const track = document.querySelector('.carousel-track');
+
+      if (!prevBtn || !nextBtn || !track) {
+        console.error('Carousel elements not found.');
+        return;
+      }
+
+      // Calculate the scroll amount (one box width plus the gap).
+      // Ensure at least one box exists.
+      const boxWidth = document.querySelector('.carousel-box').offsetWidth;
+      const gap = 20; // Should match the gap defined in the CSS (.carousel-track gap)
+      const scrollAmount = boxWidth + gap;
+
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

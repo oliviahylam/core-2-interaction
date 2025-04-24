@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Match-a matcha - Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    /* Navigation Bar Styles (using your provided code with minor color correction) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent; 
+      border-bottom: 2px solid #29672b; /* Corrected from "##29672b" to "#29672b" */
+      z-index: 1000;
+      padding: 10px 40px;
+      box-sizing: border-box;
+    }
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Branding (left) */
+    .nav-brand {
+      font-size: 24px;
+    }
+    .nav-brand .nav-brand-elegant {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+    }
+    .nav-brand .nav-brand-blocky {
+      font-family: 'Archivo Black', sans-serif;
+      color: #29672b;
+    }
+    /* Navigation links (center and right) */
+    .nav-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      color: #29672b;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .navbar-content a {
+      margin: 0 15px;
+    }
+    /* Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #7dbc7f;
+      transition: background-color 0.5s ease;
+    }
+    /* Map Section Styling */
+    .map-container {
+      margin-top: 80px; /* Leave room for the fixed nav */
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px);
+      box-sizing: border-box;
+    }
+    .map-box {
+      width: 90%;
+      height: 100%;
+      border: 2px solid #29672b;
+      border-radius: 20px;
+      overflow: hidden; /* Ensures the corners remain rounded */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    /* Style the iframe so it fills the container */
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-elegant">match-a</span>
+        <span class="nav-brand-blocky">matcha</span>
+      </a>
+      <a href="preferences.html" class="nav-link">find your match-a</a>
+      <a href="explore.html" class="nav-link">explore more</a>
+    </div>
+  </nav>
+
+  <!-- Map Section -->
+  <div class="map-container">
+    <div class="map-box">
+      <!-- Embedded Google My Map using the iframe link -->
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rqOrbjdnuyCA_i_HSgv_ksUxzIZppH0&ehbc=2E312F" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>

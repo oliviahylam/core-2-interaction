@@ -1,0 +1,69 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Archivo+Black&display=swap" rel="stylesheet">
+
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170vh; 
+  margin-top: 100px; 
+  padding-bottom: 40px; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+  font-family: 'Playfair Display', serif; 
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.right-image-box {
+  flex: 1 1 auto;  
+  width: 60%;     
+  min-width: 50px;
+  height: 700px;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.carousel-box {
+  position: relative; /* establishes a new stacking context */
+  overflow: hidden;
+}
+
+/* Pseudo-element for the overlay */
+.carousel-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 1; /* overlay sits behind text */
+  pointer-events: none; /* ensures overlay doesn’t block interactions with text */
+}
+
+/* Hover state: change overlay background to darken the box */
+.carousel-box:hover::before {
+  background: rgba(46, 97, 51, 0.7);
+}
+
+/* Cafe name styling – text is now hard-coded as white in the HTML */
+.carousel-box .cafe-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif; /* Replace with your font */
+  font-size: 1.2em; 
+  color: white;  /* already white in HTML */
+  z-index: 40;   /* higher than the overlay’s z-index */
+  transition: opacity 0.3s ease;
+  opacity: 1;    /* always visible */
+}

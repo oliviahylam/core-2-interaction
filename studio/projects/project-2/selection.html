@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matcha Preferences</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="main">
+
+    <!-- Output -->
+    <div class="output">
+      <div class="message">Tell us your matcha preferences!</div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="controls-grid">
+
+        <!-- Matcha Grading -->
+        <label for="grade">Matcha Grading:</label>
+        <select name="grade" id="grade">
+          <option value="ceremonial">Ceremonial</option>
+          <option value="premium">Premium</option>
+          <option value="culinary">Culinary</option>
+        </select>
+
+        <!-- Price Range -->
+        <fieldset>
+          <legend>Price Range:</legend>
+          <label><input type="radio" name="price" value="affordable"> Affordable</label><br>
+          <label><input type="radio" name="price" value="medium"> Medium</label><br>
+          <label><input type="radio" name="price" value="splurge"> Splurge</label><br>
+          <label><input type="radio" name="price" value="worth"> Worth it (expensive but worth it)</label>
+        </fieldset>
+
+        <!-- Flavour Profile Sliders -->
+        <fieldset>
+          <legend>Flavour Profile:</legend>
+
+          <label for="umami">Umami</label>
+          <input type="range" id="umami" name="umami" min="1" max="5">
+
+          <label for="sweetness">Sweetness</label>
+          <input type="range" id="sweetness" name="sweetness" min="1" max="5">
+
+          <label for="astringency">Astringency</label>
+          <input type="range" id="astringency" name="astringency" min="1" max="5">
+
+          <label for="vegetal">Vegetal</label>
+          <input type="range" id="vegetal" name="vegetal" min="1" max="5">
+
+          <label for="aromatic">Aromatic</label>
+          <input type="range" id="aromatic" name="aromatic" min="1" max="5">
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button name="submit">Submit</button>
+
+      </div>
+    </div>
+  </main>
+  <script src="scripts.js" type="module"></script>
+</body>
+</html>

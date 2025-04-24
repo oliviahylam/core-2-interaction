@@ -1,0 +1,180 @@
+html{
+    background-color:#4CAF50 
+}
+
+body {
+  background: #7dbc7f url('https://cdn.cosmos.so/a80fe685-18f8-46b1-aa83-b338f24cb44d?format=jpeg') no-repeat left top;
+  background-size: 40% 110%;
+  background-attachment: fixed;
+  font-family: 'Noto Sans JP', serif;
+  margin: 10;
+  padding: 40px;
+}
+  body::before {
+    content: "";
+    position: fixed;      /* Fixed so it stays in place during scrolling */
+    top: 0;
+    left: 0;
+    width: 50%;           /* Covers the left half of the viewport */
+    height: 100vh;
+    background: url('https://cdn.cosmos.so/a80fe685-18f8-46b1-aa83-b338f24cb44d?format=jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;          /* Ensure it sits behind your content */
+  }
+  
+
+  .title-heading,
+  .section-heading {
+    font-family: 'Playfair Display', serif;\
+  }
+  
+  
+  body, p, label, select, input, .section-box {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .flavour-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* important for full width */
+    width: 100%;
+  }
+  
+  fieldset {
+    width: 100%;
+  }
+  
+  label {
+    width: 100%;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* WebKit Browsers: Chrome, Safari */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #4CAF50 0%, #ddd 0%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  background: #2a822d;
+  border-radius: 50%;
+  margin-top: -6px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #4CAF50;
+  height: 6px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #2a822d;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-group {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .range-ends {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #666;
+    padding: 0 2px;
+    margin-top: 2px;
+  }
+  
+
+  @keyframes pourMatcha {
+    0% {
+      background: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+    }
+    100% {
+      background: linear-gradient(to top, #ffffff 0%, #b7db8c 100%);
+    }
+  }
+  
+  .result-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: none; /* initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.result-card {
+    width: 80%;
+    max-width: 320px;
+    height: 480px;
+    border-radius: 0 0 80px 80px; /* curved base like a cup */
+    background: linear-gradient(to top, #b7db8c 0%, #ffffff 90%);
+    box-shadow:
+      inset 0 0 20px rgba(255, 255, 255, 0.5),
+      0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 40px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #2a822d;
+    animation: pourMatcha 2.5s ease-in-out forwards;
+    backdrop-filter: blur(3px);
+  }
+  
+  
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
+
+  
+
+  

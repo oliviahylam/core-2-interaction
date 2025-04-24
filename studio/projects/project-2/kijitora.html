@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kijitora Cafe - Your Matcha Experience</title>
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="result.css">
+  
+  <style>
+    /* Navigation bar (same as the home page) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      border-bottom: 2px solid #29672b;
+      z-index: 1000;
+      padding: 10px 40px;
+      box-sizing: border-box;
+    }
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 24px;
+    }
+    .nav-brand .nav-brand-elegant {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+    }
+    .nav-brand .nav-brand-blocky {
+      font-family: 'Archivo Black', sans-serif;
+      color: #29672b;
+    }
+    .nav-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      color: #29672b;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .navbar-content a {
+      margin: 0 15px;
+    }
+    /* Global page styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Main container for result content - pushed down below the fixed nav */
+    .result-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding-top: 80px; /* Adjust if your navbar height changes */
+      height: calc(100vh - 80px);
+      box-sizing: border-box;
+      margin: 20px;
+    }
+    /* Left column: Big image for Kijitora (takes up 50% of available width) */
+    .left-box {
+      flex: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .left-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Right column: Contains the description and map stacked vertically */
+    .right-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .right-container .top-box,
+    .right-container .bottom-box {
+      flex: 1;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #fff;
+      padding: 20px;
+      overflow: hidden;
+    }
+    /* Google Map iframe styling */
+    .right-container .bottom-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+    /* Typography */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #29672b;
+      margin-top: 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 900px) {
+      .result-container {
+        flex-direction: column;
+        height: auto;
+      }
+      .left-box, .right-container {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-elegant">match-a</span>
+        <span class="nav-brand-blocky">matcha</span>
+      </a>
+      <a href="preferences.html" class="nav-link">find your match-a</a>
+      <a href="explore.html" class="nav-link">explore more</a>
+    </div>
+  </nav>
+
+  <!-- Main Result Content -->
+  <div class="result-container">
+    <!-- Left Column: Large cafe image -->
+    <div class="left-box">
+      <img src="https://s3-media0.fl.yelpcdn.com/bphoto/gTlWjdZLjGOW2L4ivu1ZsQ/o.jpg" alt="Kijitora Cafe">
+    </div>
+
+    <!-- Right Column: Stacked description and map -->
+    <div class="right-container">
+      <!-- Top Box: Cafe description -->
+      <div class="top-box">
+        <h1>Kijitora Cafe</h1>
+        <p>
+          Welcome to Kijitora Cafe, located in Williamsburg. Enjoy our expertly crafted matcha drinks, delightful pastries, and onigiri rice balls for an authentic taste of Japan. Our passion for matcha shines through every beverage and treat, ensuring a memorable experience for all matcha enthusiasts.
+        </p>
+      </div>
+      <!-- Bottom Box: Embedded Google Map -->
+      <div class="bottom-box">
+        <!-- Replace the iframe src with Kijitora's actual location embed link -->
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Je9BNiWNikluv2CKBbPXOUgqGkZcBNo&ehbc=2E312F" width="640" height="480"></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

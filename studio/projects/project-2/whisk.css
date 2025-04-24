@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .whisk {
+    width: 100px;
+    height: 100px;
+    background: url('https://www.vhv.rs/dpng/d/439-4399834_bamboo-matcha-whisk-png-transparent-png.png') no-repeat center/contain;
+    cursor: grab;
+  }
+  
+  button[name="submit"] {
+    opacity: 0;
+    transition: opacity 1s;
+    padding: 12px 24px;
+    background-color: #2a822d;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

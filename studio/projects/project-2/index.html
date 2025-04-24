@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Match-a matcha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent; 
+      border-bottom: 2px solid ##29672b; 
+      z-index: 1000;
+      padding: 10px 40px;
+      box-sizing: border-box;
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Branding (left) */
+    .nav-brand {
+      font-size: 24px; /* Smaller than the home page title */
+    }
+    
+    .nav-brand .nav-brand-elegant {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+    }
+    
+    .nav-brand .nav-brand-blocky {
+      font-family: 'Archivo Black', sans-serif;
+      color: #29672b;
+    }
+
+    /* Navigation links (center and right) */
+    .nav-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      color: #29672b;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* Optional: Add extra spacing between nav items */
+    .navbar-content a {
+      margin: 0 15px;
+    }
+
+    /* Ensure your main content doesn’t get hidden by the fixed nav */
+    .main-section {
+      margin-top: 80px; /* Adjust as needed for nav height */
+    }
+    /* Home page (and overall background) styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      /* Start with white, to be transitioned to matcha green */
+      background-color: #ffffff;
+      transition: background-color 0.5s ease;
+    }
+    
+    /* Home page section (the top part) */
+    .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 80px;
+      box-sizing: border-box;
+    }
+    
+    .left-content {
+      max-width: 40%;
+      margin-right: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .title {
+      font-size: 100px;
+      line-height: 1.1;
+      margin: 0;
+    }
+    
+    .elegant {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+    }
+    
+    .blocky {
+      font-family: 'Archivo Black', sans-serif;
+      color: ##29672b;
+    }
+    
+    .match-button {
+      margin-top: 30px;
+      background-color: #377b39;
+      color: white;
+      font-size: 18px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Archivo Black', sans-serif;
+      text-decoration: none;
+      width: fit-content;
+      transition: background-color 0.3s;
+    }
+    
+    .match-button:hover {
+      background-color: #1d6220;
+    }
+    
+    .right-image-box {
+      width: 500px;
+      height: 700px;
+      background-color: #f0f0f0;
+      border-radius: 30px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      background-image: url('https://www.matchaeologist.com/cdn/shop/articles/Our-Products-max_16-9.jpg?v=1568377892');
+    }
+    
+    /* Explore section styles – this is the content that will be scrolled into */
+    #explore {
+      min-height: 100vh;
+      padding: 80px;
+      box-sizing: border-box;
+      /* The background remains the same (white turning to green via JS) */
+    }
+    
+    /* Responsive styling */
+    @media (max-width: 900px) {
+      .main-section {
+        flex-direction: column;
+        padding: 40px;
+      }
+    
+      .left-content {
+        max-width: 100%;
+        text-align: center;
+      }
+    
+      .right-image-box {
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+      }
+    }
+    #carousel-section {
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      /* Optionally set a max-width: */
+      max-width: 1200px;
+      margin: auto;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .carousel-box {
+      flex: 0 0 calc(33.33% - 20px); /* Three boxes visible at a time */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    /* Arrow buttons */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .carousel-prev {
+      left: 10px;
+    }
+    .carousel-next {
+      right: 10px;
+    }
+  </style>
+</head>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-brand-elegant">match-a</span>
+        <span class="nav-brand-blocky">matcha</span>
+      </a>
+      <a href="preferences.html" class="nav-link">find your match-a</a>
+      <a href="explore.html" class="nav-link">explore more</a>
+    </div>
+  </nav>
+
+  <!-- Home Page Main Section -->
+  <div class="main-section">
+    <div class="left-content">
+      <h1 class="title">
+        <span class="elegant">Match-a</span> <br>
+        <span class="blocky">matcha</span>
+      </h1>
+      <a href="preferences.html" class="match-button">Find my match-a!</a>
+    </div>
+    <div class="right-image-box"></div>
+  </div>
+
+  <!-- Carousel Section (Below Explore More Section) -->
+  <section id="carousel-section">
+    <h2 style="text-align:center; font-family: 'Playfair Display', serif; color: ##377b39;">Discover NYC Matcha</h2>
+    <div class="carousel-container">
+      <button class="carousel-arrow carousel-prev">&#8592;</button>
+      <div class="carousel-track">
+        <!-- Create 15 boxes; edit the inline style for background-image as needed for each box -->
+        <a href="kettl.html" class="carousel-box" style="background-image: url('https://dw82ptradz9jo.cloudfront.net/daylog/62a8e53f1c145444e3bef022/987b2f2a-b893-4d19-adf6-4fc03fdf9cdf');">Kettl</a>
+        <a href="sorate.html" class="carousel-box" style="background-image: url('https://media.bizj.us/view/img/12617734/20231009-sorate090*1200xx798-800-0-0.jpg');">Sorate</a>
+        <a href="nipponcha.html" class="carousel-box" style="background-image: url('https://www.northbrooklyndispatch.com/photos/2022/11/1128/nipponIMG_5542.jpg');">Nippon Cha</a>
+        <a href="kijitora.html" class="carousel-box" style="background-image: url('https://cdn.prod.website-files.com/603692344b0bfc3b5f6b3ee0/6710a5c057d7c4076a5a92a8_media.webp');">Kijitora</a>
+        <a href="isshiki.html" class="carousel-box" style="background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/u0TJjfaeWFZnBFbkog7coA/258s.jpg');">Isshiki</a>
+        <a href="ppl.html" class="carousel-box" style="background-image: url('https://res.cloudinary.com/the-infatuation/image/upload/v1704478301/NYC_PPL_Interior_AlexStaniloff-1_rnwzvw.jpg');">PPL</a>
+        <a href="12matcha.html" class="carousel-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzxnBuxVB83iLUKBHbkWOGR98c9qx-4pXzQznCOapUV_NBy1m1ZZzxTZ31iPxJMUZBxIY&usqp=CAU');">12 Matcha</a>
+        <a href="setsugekka.html" class="carousel-box" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipOOZQPcDt3jHHkRJlVjqaboCZheIaXGF28DOKNM=s1600-w640');">Setsugekka</a>
+        <a href="tokymatcha.html" class="carousel-box" style="background-image: url('https://s3-media0.fl.yelpcdn.com/bphoto/E3-dvi-7GygMwrXm3NjVdw/348s.jpg');">Tokyuamatcha</a>
+        <a href="teadealers.html" class="carousel-box" style="background-image: url('https://cdn.shopify.com/s/files/1/0696/9261/files/IMG_9650_copy_600x600.jpg?v=1721596882');">Tea Dealers</a>
+        <a href="joescoffee.html" class="carousel-box" style="background-image: url('https://joecoffeecompany.com/wp-content/uploads/2023/11/Store-Front-1.jpg');">Joe's Coffee</a>
+        <a href="plantshed.html" class="carousel-box" style="background-image: url('https://www.plantshed.com//media/wysiwyg/retail_stores/Prince-Locator-Image2-Nov2022.jpg');">Plantshed</a>
+        <a href="lacabra.html" class="carousel-box" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/moy2t1I-k7m8fKKgnUG_oA/3024x4032bb.jpg');">La Cabra</a>
+        <a href="rhythm0.html" class="carousel-box" style="background-image: url('https://i0.wp.com/greenpointers.com/app/uploads/2022/10/IMG_5622-2.jpg?resize=500%2C675');">Rhythm 0</a>
+        <a href="librabakery.html" class="carousel-box" style="background-image: url('https://images-prod.gothamist.com/original_images/librae-9.jpg');">Librae Bakery</a>
+      </div>
+      <button class="carousel-arrow carousel-next">&#8594;</button>
+    </div>
+  </section>
+
+  <script>
+    const body = document.body;
+    let autoScrolled = false;
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / scrollHeight;
+      const startColor = { r: 255, g: 255, b: 255 };
+      const endColor = { r: 155, g: 200, b:150 };
+      const r = Math.round(startColor.r + (endColor.r - startColor.r) * scrollPercent);
+      const g = Math.round(startColor.g + (endColor.g - startColor.g) * scrollPercent);
+      const b = Math.round(startColor.b + (endColor.b - startColor.b) * scrollPercent);
+      body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      if (scrollPercent >= 0.1 && !autoScrolled) {
+        autoScrolled = true;
+        document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
+
+<script>
+  // Select carousel elements.
+  const track = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+  const prevButton = document.querySelector('.carousel-prev');
+  const nextButton = document.querySelector('.carousel-next');
+
+  // Shared offset (in pixels) and auto-scroll speed.
+  let offset = 0;
+  let speed = 0.1; // pixels per millisecond
+
+  // Used for calculating the time difference between frames.
+  let lastTime = null;
+  let autoScrollRequest = null;
+
+  // Determine the manual move amount.
+  // Assumes a fixed width for each carousel box + gap (adjust the gap value as needed).
+  const moveAmount = document.querySelector('.carousel-box').offsetWidth + 20;
+
+  // Continuous auto-scroll function.
+  function animateCarousel(timestamp) {
+    // If lastTime is null, initialize it to the current timestamp.
+    if (lastTime === null) {
+      lastTime = timestamp;
+    }
+    // Calculate elapsed time since last frame.
+    const delta = timestamp - lastTime;
+    lastTime = timestamp;
+
+    // Update the offset with the auto-scroll speed.
+    offset += speed * delta;
+    
+    // Calculate the maximum offset (total scrollable width minus container width).
+    const maxOffset = track.scrollWidth - container.clientWidth;
+    
+    // Wrap around (infinite scroll).
+    if (offset >= maxOffset) {
+      offset = 0;
+    }
+    
+    // Apply the CSS transform to move the carousel.
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    // Request the next animation frame.
+    autoScrollRequest = requestAnimationFrame(animateCarousel);
+  }
+
+  // Start auto-scroll.
+  function startAutoScroll() {
+    // Reset lastTime so that any manual update doesn’t cause a jump.
+    lastTime = null;
+    autoScrollRequest = requestAnimationFrame(animateCarousel);
+  }
+  
+  // Start auto-scroll when the page loads.
+  startAutoScroll();
+  
+  // Function to handle manual move. This simply adjusts the shared offset.
+  function manualMove(delta) {
+    // Update offset manually.
+    offset += delta;
+    
+    // Calculate the maximum offset.
+    const maxOffset = track.scrollWidth - container.clientWidth;
+    
+    // Wrap around if necessary.
+    if (offset < 0) {
+      offset = maxOffset;
+    } else if (offset > maxOffset) {
+      offset = 0;
+    }
+    
+    // Immediately update the transform.
+    track.style.transform = `translateX(-${offset}px)`;
+    
+    // Reset the lastTime so that the auto-scroll calculation doesn’t include the delay caused by manual clicks.
+    lastTime = null;
+  }
+  
+  // Add event listeners for the manual arrow buttons.
+  prevButton.addEventListener('click', () => {
+    manualMove(-moveAmount);
+  });
+  
+  nextButton.addEventListener('click', () => {
+    manualMove(moveAmount);
+  });
+</script>
+
+
+
+
+</body>
+</html>

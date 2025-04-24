@@ -1,0 +1,13 @@
+.right-container .top-box { 
+  flex: 1; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  background: url("https://media.istockphoto.com/id/503371943/photo/close-up-of-beige-rice-paper-texture-background.jpg?s=612x612&w=0&k=20&c=04wfdXQ-zMCgXq5_UfWH-FPi6Yqm0db5au9PcVVzvgo=") no-repeat center center/cover;
+  padding: 20px; 
+  overflow: hidden; 
+}
+
+body {
+    background-color: #7dbc7f;
+  }
+  
