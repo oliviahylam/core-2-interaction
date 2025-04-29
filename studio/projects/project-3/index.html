@@ -13,8 +13,9 @@
                 font-family: 'Aladin', cursive;
                 color: rgb(255, 128, 0);
                 text-align: center;
-                margin-top: 30px;
+                margin-top: 0px;
                 font-size: 10rem;
+                margin-bottom: 0px;
             }
 
             body {
@@ -34,5 +35,37 @@
         <h1>Nomie</h1>
         <p class="subtitle">Shop Smart. cook fast. eat clean</p>
     </body>
+
+    <div class="dropdowns">
+        <!-- Dietary Restrictions -->
+        <label for="dietary">Dietary Restrictions</label>
+        <select id="dietary" name="dietaryRestrictions">
+          <option value="">-- Select one --</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="gluten-free">Gluten-Free</option>
+          <option value="dairy-free">Dairy-Free</option>
+          <option value="halal">Halal</option>
+        </select>
+    
+        <!-- Nutritional Goals -->
+        <label for="goals">Nutritional Goals</label>
+        <select id="goals" name="nutritionalGoals">
+          <option value="">-- Select one --</option>
+          <option value="high-protein">High Protein</option>
+          <option value="low-carb">Low Carb</option>
+          <option value="high-fiber">High Fiber</option>
+          <option value="low-fat">Low Fat</option>
+        </select>
+    
+        <!-- Weekly Budget -->
+        <label for="budget">Weekly Budget (USD)</label>
+        <select id="budget" name="weeklyBudget">
+          <option value="">-- Select one --</option>
+          <option value="10-20">$10–20</option>
+          <option value="21-40">$21–40</option>
+          <option value="41-60">$41–60</option>
+        </select>
+      </div>
 </html>
 
