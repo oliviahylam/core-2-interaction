@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meal Planner | Nomie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Bayon&family=Belanosima&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="planner.css">
+  
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Nomie</h1>
+    <a href="index.html" class="home-link">
+      <img src="images/Nomie .png" alt="Nomie logo" class="logo-icon">
+    </a>
+
+    <a href="index.html" class="home-btn">
+      <img src="images/Nomie .png" alt="Home" class="home-icon">
+    </a>
+  </header>
+      
+        <h2>Weekly Meal Planner</h2>
+      
+  <table class="planner-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Breakfast</th>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+      </tr>
+      <tr>
+        <th>Lunch</th>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+      </tr>
+      <tr>
+        <th>Dinner</th>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+        <td><input type="text" placeholder="Enter meal…"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="budget-heading">Weekly Grocery Budget</h2>
+  <section class="budget-grid">
+  
+    <div class="budget-column">
+      <label for="budget-items">Grocery Items</label>
+      <textarea id="budget-items" placeholder="Enter groceries here"></textarea>
+    </div>
+  
+    <div class="budget-column">
+      <label for="budget-qty">Quantity</label>
+      <textarea id="budget-qty" placeholder="Enter quantity here"></textarea>
+    </div>
+  
+    <div class="budget-column">
+      <label for="budget-prices">Price</label>
+      <textarea id="budget-prices" placeholder="Enter prices here"></textarea>
+    </div>
+  
+    <div class="budget-total">
+      <label for="total-spending">Total Spending</label>
+      <input type="text" id="total-spending" placeholder="$0.00">
+    </div>
+  
+  </section>
+  
+  <button id="print-btn" class="print-btn">🖨️ Print / Download</button>
+
+
+  <script>
+    document.getElementById('print-btn')
+      .addEventListener('click', () => window.print());
+  </script>
+  
+</body>
+</html>

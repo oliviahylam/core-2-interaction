@@ -1,71 +1,604 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nomie</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Bayon&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <style>
-            h1 {
-                font-family: 'Aladin', cursive;
-                color: rgb(255, 128, 0);
-                text-align: center;
-                margin-top: 0px;
-                font-size: 10rem;
-                margin-bottom: 0px;
-            }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomie</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Bayon&family=Belanosima&display=swap"
+    rel="stylesheet" />
 
-            body {
-                background-color:rgb(246, 219, 164);
-            }
-        
-            p.subtitle {
-                font-family: 'Bayon', sans-serif;
-                color: rgb(6, 77, 6);
-                font-size: 2rem;
-                margin-top: 0;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Nomie</h1>
-        <p class="subtitle">Shop Smart. cook fast. eat clean</p>
-    </body>
+</head>
 
-    <div class="dropdowns">
-        <!-- Dietary Restrictions -->
-        <label for="dietary">Dietary Restrictions</label>
-        <select id="dietary" name="dietaryRestrictions">
-          <option value="">-- Select one --</option>
-          <option value="vegetarian">Vegetarian</option>
-          <option value="vegan">Vegan</option>
-          <option value="gluten-free">Gluten-Free</option>
-          <option value="dairy-free">Dairy-Free</option>
-          <option value="halal">Halal</option>
-        </select>
-    
-        <!-- Nutritional Goals -->
-        <label for="goals">Nutritional Goals</label>
-        <select id="goals" name="nutritionalGoals">
-          <option value="">-- Select one --</option>
-          <option value="high-protein">High Protein</option>
-          <option value="low-carb">Low Carb</option>
-          <option value="high-fiber">High Fiber</option>
-          <option value="low-fat">Low Fat</option>
-        </select>
-    
-        <!-- Weekly Budget -->
-        <label for="budget">Weekly Budget (USD)</label>
-        <select id="budget" name="weeklyBudget">
-          <option value="">-- Select one --</option>
-          <option value="10-20">$10–20</option>
-          <option value="21-40">$21–40</option>
-          <option value="41-60">$41–60</option>
-        </select>
-      </div>
+<body>
+  <header class="site-header">
+
+    <h1>Nomie</h1>
+    <img src="images/Nomie .png" alt="Nomie logo" class="logo-icon">
+  </header>
+
+  <p class="subtitle">Shop Smart. cook fast. eat clean</p>
+  <p class="tagline">Your weekly guide to 20 minute meals under 20 dollars.</p>
+  <p class="heading">Recommended Meals</p>
+
+  <div class="meal-cards">
+    <!-- Miso Salmon -->
+    <div class="meal-card"
+         data-diet="gluten-free,halal,dairy-free"
+         data-nutrition="high-protein,low-fat"
+         data-meat="fish">
+      <a href="misosalmon.html" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/miso.png" alt="Miso Salmon" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Low-Fat</span>
+              <span class="tag">Fish</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Miso Salmon</p>
+      </a>
+    </div>
+  
+    <!-- Kimchi Fried Rice -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free"
+         data-nutrition="high-fiber"
+         data-meat="pork,chicken">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/kimchifr.png" alt="Kimchi Fried Rice" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">High-Fiber</span>
+              <span class="tag">Pork</span>
+              <span class="tag">Chicken</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Kimchi Fried Rice</p>
+      </a>
+    </div>
+  
+    <!-- Braised Pork -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free"
+         data-nutrition="high-protein"
+         data-meat="pork">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/braisepork.png" alt="Braised Pork" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Pork</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Braised Pork</p>
+      </a>
+    </div>
+  
+    <!-- Chicken Orzo with Broccoli -->
+    <div class="meal-card"
+         data-diet="halal"
+         data-nutrition="high-protein"
+         data-meat="chicken">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/orzo.png" alt="Chicken Orzo with Broccoli" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Chicken</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Chicken Orzo with Broccoli</p>
+      </a>
+    </div>
+  
+    <!-- Steak with Broccolini -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free,halal"
+         data-nutrition="high-protein,low-carb,high-fiber"
+         data-meat="beef">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/steak.png" alt="Steak with Broccolini" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Low-Carb</span>
+              <span class="tag">High-Fiber</span>
+              <span class="tag">Beef</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Steak with Broccolini</p>
+      </a>
+    </div>
+  
+    <!-- Tomato Basil Pasta with Tuna -->
+    <div class="meal-card"
+         data-diet="halal,dairy-free"
+         data-nutrition="low-fat"
+         data-meat="fish">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/tunapasta.png" alt="Tomato Basil Pasta with Tuna" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Halal</span>
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Low-Fat</span>
+              <span class="tag">Fish</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Tomato Basil Pasta with Tuna</p>
+      </a>
+    </div>
+  
+    <!-- Miso Soup with Soft Boiled Eggs -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free,vegetarian"
+         data-nutrition="high-protein,low-fat"
+         data-meat="other">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/soup.png" alt="Miso Soup with Soft Boiled Eggs" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Vegetarian</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Low-Fat</span>
+              <span class="tag">Other</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Miso Soup with Soft Boiled Eggs</p>
+      </a>
+    </div>
+  
+    <!-- Salmon with Rice -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free,halal"
+         data-nutrition="high-protein"
+         data-meat="fish">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/salmon.png" alt="Salmon with Rice" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Fish</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Salmon with Rice</p>
+      </a>
+    </div>
+  
+    <!-- Mapo Tofu with Rice -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free"
+         data-nutrition="high-protein"
+         data-meat="other,pork,beef,chicken">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/mapotofu.png" alt="Mapo Tofu with Rice" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Other</span>
+              <span class="tag">Pork</span>
+              <span class="tag">Beef</span>
+              <span class="tag">Chicken</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Mapo Tofu with Rice</p>
+      </a>
+    </div>
+  
+    <!-- Creamy Garlic Chicken with Rice -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free,halal"
+         data-nutrition="high-protein"
+         data-meat="chicken">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/creamychicken.png" alt="Creamy Garlic Chicken with Rice" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Chicken</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Creamy Garlic Chicken with Rice</p>
+      </a>
+    </div>
+  
+    <!-- Pesto Pasta with Chicken and Spinach -->
+    <div class="meal-card"
+         data-diet="dairy-free,gluten-free,halal"
+         data-nutrition="high-protein,low-fat"
+         data-meat="chicken,other">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/pesto.png" alt="Pesto Pasta with Chicken and Spinach" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Gluten-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">Low-Fat</span>
+              <span class="tag">Chicken</span>
+              <span class="tag">Other</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">Pesto Pasta with Chicken and Spinach</p>
+      </a>
+    </div>
+  
+    <!-- 10 min “Hot Pot” -->
+    <div class="meal-card"
+         data-diet="dairy-free,halal"
+         data-nutrition="high-protein,high-fiber"
+         data-meat="pork,beef,other">
+      <a href="#" class="meal-link">
+        <div class="image-wrapper">
+          <img src="images/PNG/hotpot.png" alt="10 min 'Hot Pot'" class="meal-image">
+          <div class="overlay">
+            <div class="tags">
+              <span class="tag">Dairy-Free</span>
+              <span class="tag">Halal</span>
+              <span class="tag">High-Protein</span>
+              <span class="tag">High-Fiber</span>
+              <span class="tag">Pork</span>
+              <span class="tag">Beef</span>
+              <span class="tag">Other</span>
+            </div>
+          </div>
+        </div>
+        <p class="meal-name">10 min “Hot Pot”</p>
+      </a>
+    </div>
+  </div>
+  
+
+  <p class="subheading">Find a Recipe</p>
+  <div class="meal-cards all-meals">
+    <div class="meal-card">
+      <a href="misosalmon.html" class="meal-link">
+        <img src="images/PNG/miso.png" alt="Miso Salmon" class="meal-image">
+        <p class="meal-name">Miso Salmon</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/kimchifr.png" alt="Kimchi Fried Rice" class="meal-image">
+        <p class="meal-name">Kimchi Fried Rice</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/braisepork.png" alt="Braised Pork" class="meal-image">
+        <p class="meal-name">Braised Pork</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/orzo.png" alt="Chicken Orzo with Broccoli" class="meal-image">
+        <p class="meal-name">Chicken Orzo with Broccoli</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/steak.png" alt="Steak with Broccolini" class="meal-image">
+        <p class="meal-name">Steak with Broccolini</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/tunapasta.png" alt="Tomato Basil Pasta with Tuna" class="meal-image">
+        <p class="meal-name">Tomato Basil Pasta with Tuna</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/soup.png" alt="Miso Soup with Soft Boiled Eggs" class="meal-image">
+        <p class="meal-name">Miso Soup with Soft Boiled Eggs</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/salmon.png" alt="Salmon with Rice" class="meal-image">
+        <p class="meal-name">Salmon with Rice</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/mapotofu.png" alt="Mapo Tofu with Rice" class="meal-image">
+        <p class="meal-name">Mapo Tofu with Rice</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/creamychicken.png" alt="Creamy Garlic Chicken with Rice" class="meal-image">
+        <p class="meal-name">Creamy Garlic Chicken with Rice</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/pesto.png" alt="Pesto Pasta with Chicken and Spinach" class="meal-image">
+        <p class="meal-name">Pesto Pasta with Chicken and Spinach</p>
+      </a>
+    </div>
+    <div class="meal-card" 
+      <a href="#" class="meal-link">
+        <img src="images/PNG/hotpot.png" alt="10 min 'Hot Pot'" class="meal-image">
+        <p class="meal-name">10 min 'Hot Pot'</p>
+      </a>
+    </div>
+
+</body>
+
+<title>Preference Panel</title>
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Toggle icon */
+  .toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 60px;
+    height: 40px;
+    background: rgb(246, 219, 164);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #064d06;
+    font-size: 2rem;
+    user-select: none;
+  }
+
+  /* Panel */
+  .panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: rgb(246, 219, 164);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+    font-family: 'Belanosima', sans-serif;
+    padding-top: 4rem;
+  }
+
+  .panel.open {
+    transform: translateX(0);
+  }
+
+  .panel h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: rgb(255, 128, 0);
+  }
+
+  .h2 {
+    margin-top: 5px;
+  }
+
+  .group {
+    margin-bottom: 1rem;
+  }
+
+  .group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #064d06;
+  }
+
+  /* Checkbox pills */
+  .opts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .opts label {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .opts input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .opts span {
+    padding: 0.3em 0.6em;
+    border: 2px solid #064d06;
+    border-radius: 4px;
+    transition: background .2s, color .2s;
+  }
+
+  .opts input:checked+span {
+    background: #064d06;
+    color: white;
+  }
+
+  /* Dropdown */
+  .dropdown select {
+    width: 100%;
+    padding: 0.4em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .planner-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 80px;                     /* match your PNG’s size */
+  height: 80px;
+  padding: 0;                      /* no extra space */
+  background: url('images/Nomie planner.png') 
+              no-repeat center/contain;
+  background-color: transparent;   /* or your site BG if you want a circle */
+  border: none;                    /* remove any default border */
+  border-radius: 4px;              /* optional rounding */
+  cursor: pointer;
+  z-index: 1001;
+  transition: opacity 0.2s;
+  /* hide any text inside */
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.planner-btn:hover {
+  opacity: 0.8;                    /* simple hover feedback */
+}
+
+
+  .planner-btn.icon-only {
+  width: 48px;             /* match your icon’s dimensions */
+  height: 48px;
+  display: inline-block;
+  background-image: url('images/meal-planner-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* remove default planner-btn colors if you want just the icon */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+  html,
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+</style>
+
+
+<!-- Toggle button -->
+<div class="toggle" id="toggle">☰</div>
+
+<!-- Top-right planner button -->
+<a href="meal-planner.html" class="planner-btn">
+  <img src="images/Nomie planner.png" alt="Meal Planner" class="planner-icon">
+</a>
+
+
+
+<!-- Sliding panel -->
+<aside class="panel" id="panel">
+  <h2>Customize your meal</h2>
+
+  <!-- Dietary Restrictions -->
+  <div class="group">
+    <label>Dietary Restrictions</label>
+    <div class="opts">
+      <label><input type="checkbox" name="diet" value="vegetarian"><span>Vegetarian</span></label>
+      <label><input type="checkbox" name="diet" value="vegan"><span>Vegan</span></label>
+      <label><input type="checkbox" name="diet" value="gluten-free"><span>Gluten-Free</span></label>
+      <label><input type="checkbox" name="diet" value="dairy-free"><span>Dairy-Free</span></label>
+      <label><input type="checkbox" name="diet" value="halal"><span>Halal</span></label>
+    </div>
+  </div>
+
+  <!-- Nutritional Goals -->
+  <div class="group">
+    <label>Nutritional Goals</label>
+    <div class="opts">
+      <label><input type="checkbox" name="nutrition" value="high-protein"><span>High-Protein</span></label>
+      <label><input type="checkbox" name="nutrition" value="low-carb"><span>Low Carb</span></label>
+      <label><input type="checkbox" name="nutrition" value="high-fiber"><span>High-Fiber</span></label>
+      <label><input type="checkbox" name="nutrition" value="low-fat"><span>Low Fat</span></label>
+    </div>
+  </div>
+
+  <!-- Protein Type -->
+<div class="group">
+  <label>Protein Type</label>
+  <div class="opts">
+    <label>
+      <input type="checkbox" name="protein" value="fish">
+      <span>Fish</span>
+    </label>
+    <label>
+      <input type="checkbox" name="protein" value="chicken">
+      <span>Chicken</span>
+    </label>
+    <label>
+      <input type="checkbox" name="protein" value="beef">
+      <span>Beef</span>
+    </label>
+    <label>
+      <input type="checkbox" name="protein" value="pork">
+      <span>Pork</span>
+    </label>
+    <label>
+      <input type="checkbox" name="protein" value="other">
+      <span>Other</span>
+    </label>
+  </div>
+</div>
+
+</aside>
+
+<script src="scripts.js"></script>
+
+
 </html>
-

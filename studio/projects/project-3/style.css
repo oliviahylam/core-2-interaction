@@ -1,0 +1,222 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem;             
+    margin-top: 35px;       
+  }
+
+  .meal-title{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 5rem;
+    font-family: 'Aladin', cursive;
+    color: rgb(255, 128, 0);
+    line-height: 0.5px;
+    margin-bottom: 0px;
+  }
+  
+  .logo-icon {
+    width: 12rem;  
+    height: 16rem;
+  }
+  
+ 
+  .site-header h1 {
+    margin: 0;    
+  }
+  
+  h1 {
+    font-family: 'Aladin', cursive;
+    color: rgb(255, 128, 0);
+    text-align: center;
+    margin-top: 35px;
+    font-size: 13rem;
+    margin-bottom: 0px;
+}
+
+body {
+    background-color:rgb(246, 219, 164);
+}
+.main-content {
+text-align: center;
+padding: 2rem 1rem;
+}
+
+p.subtitle {
+    font-family: 'Bayon', sans-serif;
+    color: rgb(6, 77, 6);
+    font-size: 2.25rem;
+    margin-top: 0;
+    text-align: center;
+    line-height: 0;
+}
+
+.tagline {
+ line-height: 0;
+font-family: 'Belanosima', sans-serif;
+ font-size: 1.25rem;
+color: #000;
+text-align: center;
+margin-bottom: 5rem;
+ }
+
+.heading {
+    font-family: 'Bayon', sans-serif;
+    color: rgb(6, 77, 6);
+    font-size: 25px;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    text-align: Left;
+}
+
+.subheading {
+    font-family: 'Bayon', sans-serif;
+    color: rgb(6, 77, 6);
+    font-size: 25px;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    text-align: Left;
+}
+
+.meal-cards {
+  display: flex;       
+  flex-direction: row;  
+  gap: 3rem;            
+  margin: 0 4rem 2rem;
+  display: flex;
+  flex-wrap: nowrap;          
+  overflow-x: auto;           
+  padding: 0.5rem 0;             
+  -webkit-overflow-scrolling: touch; 
+  
+  scrollbar-width: none;      
+}
+.meal-cards::-webkit-scrollbar {
+  display: none;
+
+}
+.meal-card {
+  width: 350px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: rgb(6, 77, 6);
+  text-align: center;
+  flex: 0 0 auto;            
+}
+.meal-card .meal-image {
+  width: 100%;
+  height: 275px;      
+  object-fit: cover;  
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.meal-card .meal-name {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  color: #ccc;
+}
+
+.meal-cards.recommended {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.meal-cards.recommended .meal-card {
+  flex: 0 0 250px;       
+  width: 300px;
+  height: 250px;
+}
+.meal-cards.recommended {
+  scrollbar-width: none; /* Firefox */
+}
+.meal-cards.recommended::-webkit-scrollbar {
+  display: none;       
+}
+
+.meal-cards.all-meals {
+  flex-wrap: wrap;       
+  overflow: hidden;      
+}
+.meal-cards.all-meals .meal-card {
+  flex: 0 0 200px;       
+}
+
+
+
+
+
+/* enable snapping at each card */
+.meal-cards.recommended {
+  scroll-snap-type: x mandatory;
+  /* keep your overflow + hiding scrollbar rules too */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: relative;
+}
+.meal-cards.recommended::-webkit-scrollbar {
+  display: none;
+}
+
+/* each card snaps to the left edge */
+.meal-cards.recommended .meal-card {
+  scroll-snap-align: start;
+  flex: 0 0 220px;  /* or whatever width you decided */
+}
+
+/* make the card a positioning context */
+.meal-card {
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+/* wrapper for image + overlay */
+.image-wrapper {
+  position: relative;
+}
+
+/* the dimmed layer */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+/* show it on hover (or keyboard focus) */
+.meal-card:hover .overlay,
+.meal-card:focus-within .overlay {
+  opacity: 1;
+}
+
+/* the tags container */
+.overlay .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+/* each pill */
+.overlay .tags .tag {
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 0.3em 0.6em;
+  border-radius: 0.3rem;
+  font-size: 0.875rem;
+}

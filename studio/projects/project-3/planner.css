@@ -1,0 +1,231 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem;             
+    margin-top: 35px;       
+  }
+  
+  .logo-icon {
+    width: 8rem;  
+    height: 12rem;
+  }
+  
+ 
+  .site-header h1 {
+    margin: 0;    
+  }
+
+  h1 {
+    font-family: 'Aladin', cursive;
+    color: rgb(255, 128, 0);
+    text-align: center;
+    margin-top: 35px;
+    font-size: 9rem;
+    margin-bottom: 0px;
+}
+ 
+ body {
+      margin: 0;
+      padding: 2rem;
+      background-color: rgb(246, 219, 164);
+      font-family: sans-serif;       /* same default as your other pages */
+    }
+    h2 {
+      font-family: 'Bayon', sans-serif;
+      color: rgb(6, 77, 6);
+      font-size: 25px;
+      margin-top: 1rem;
+      margin-left: 4rem;
+      text-align: center;
+    }
+
+    .home-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .home-link img {
+      cursor: pointer;
+    }
+    
+    .home-link h1 {
+      margin: 0;
+      color: inherit;
+    }
+    
+
+    .planner-table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .planner-table th,
+    .planner-table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      vertical-align: top;
+    }
+
+    .planner-table thead th {
+      background: rgb(255, 128, 0);
+      color: #fff;
+      font-family: 'Bayon', sans-serif;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .planner-table tbody th {
+      background: rgb(6, 77, 6);
+      color: #fff;
+      font-family: 'Bayon', sans-serif;
+      text-align: left;
+      width: 120px;
+    }
+
+    .planner-table td input {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      font-family: inherit;   
+      font-size: 1rem;
+      padding: 0.25rem;
+      background: transparent;
+    }
+    .planner-table td input:focus {
+      outline: 1px solid #064d06;
+    }
+
+/* 1) Container gets the outer border and rounded corners */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;                      /* no gaps between columns */
+  max-width: 900px;
+  margin: 1rem auto 2rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;            /* clip any inner overflow cleanly */
+  background: #fff;
+  padding: 0;                  /* remove any default padding */
+}
+
+/* 2) Labels stay as-is */
+.budget-column label {
+  font-family: 'Bayon', sans-serif;
+  color: rgb(6, 77, 6);
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc; /* optional: separate label from box */
+  background: #f9f9f9;
+}
+
+/* 3) Textareas lose their own borders and fill each grid cell */
+.budget-column textarea {
+  width: 100%;
+  height: 200px;               /* or whatever min-height you like */
+  border: none;                /* remove internal borders */
+  border-radius: 0;            /* no rounding on the individual fields */
+  resize: vertical;
+  padding: 0.5rem;
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* 4) Total row stretches full width and matches the container style */
+.budget-total {
+  grid-column: 1 / -1;         /* span all 3 columns */
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ccc;  /* optional separator above total */
+  background: #f9f9f9;
+}
+.budget-total label {
+  font-family: 'Bayon', sans-serif;
+  color: rgb(6, 77, 6);
+  padding: 0.5rem;
+}
+.budget-total input {
+  border: none;
+  padding: 0.5rem;
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+
+/* tell the browser we want A4 portrait */
+@page {
+  size: A4 portrait;
+  margin: 1cm;
+}
+
+/* hide interactive UI when printing */
+@media print {
+  .print-btn,
+  /* any other elements you don’t want on paper: */
+  .toggle, .planner-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important; /* white background on paper */
+  }
+
+  /* make tables fill the printable width */
+  .planner-table,
+  .budget-table,
+  .budget-grid {
+    margin: 0;
+    width: auto;
+  }
+
+  /* ensure no overflow or scrollbars */
+  .meal-cards.recommended,
+  .ingredient-list {
+    overflow: visible !important;
+  }
+}
+
+.print-btn {
+  background: #064d06;                /* dark green */
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 1rem 4rem;                  /* space around it */
+  display: inline-block;
+}
+.print-btn:hover {
+  background: #045005;                /* slightly darker on hover */
+}
+
+.home-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 80px;                     /* match your PNG’s size */
+  height: 80px;
+  padding: 0;                      /* no extra space */
+  background: url('images/Nomie\ .png') 
+              no-repeat center/contain;
+  background-color: transparent;   /* or your site BG if you want a circle */
+  border: none;                    /* remove any default border */
+  border-radius: 4px;              /* optional rounding */
+  cursor: pointer;
+  z-index: 1001;
+  transition: opacity 0.2s;
+  /* hide any text inside */
+  text-indent: -9999px;
+  overflow: hidden;
+}
